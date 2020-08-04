@@ -1,0 +1,17 @@
+{
+  "entry": "server.js",
+  "files": {
+    "lang-de-DE.js": "lang-de-DE.js",
+    "lang-es-GT.js": "lang-es-GT.js",
+    "pages/blank-page.js": "pages/blank-page.js",
+    "pages/index.js": "pages/index.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "lang-de-DE.js": "lang-de-DE.js.map",
+    "lang-es-GT.js": "lang-es-GT.js.map",
+    "pages/blank-page.js": "pages/blank-page.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "server.js": "server.js.map"
+  }
+}

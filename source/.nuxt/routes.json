@@ -1,0 +1,44 @@
+[
+  {
+    "name": "blank-page___en",
+    "path": "/blank-page",
+    "component": "/media/datos/Proyectos/CtrlpGT/profile_landing/source/pages/blank-page.vue",
+    "chunkName": "pages/blank-page",
+    "_name": "_6c8b537b"
+  },
+  {
+    "name": "index___de",
+    "path": "/de",
+    "component": "/media/datos/Proyectos/CtrlpGT/profile_landing/source/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_1e81740f"
+  },
+  {
+    "name": "index___es",
+    "path": "/es",
+    "component": "/media/datos/Proyectos/CtrlpGT/profile_landing/source/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_1e81740f"
+  },
+  {
+    "name": "blank-page___de",
+    "path": "/de/blank-page",
+    "component": "/media/datos/Proyectos/CtrlpGT/profile_landing/source/pages/blank-page.vue",
+    "chunkName": "pages/blank-page",
+    "_name": "_6c8b537b"
+  },
+  {
+    "name": "blank-page___es",
+    "path": "/es/blank-page",
+    "component": "/media/datos/Proyectos/CtrlpGT/profile_landing/source/pages/blank-page.vue",
+    "chunkName": "pages/blank-page",
+    "_name": "_6c8b537b"
+  },
+  {
+    "name": "index___en",
+    "path": "/",
+    "component": "/media/datos/Proyectos/CtrlpGT/profile_landing/source/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_1e81740f"
+  }
+]
