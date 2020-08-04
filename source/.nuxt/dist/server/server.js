@@ -652,7 +652,7 @@ const parsePages = true;
 const pages = {};
 const beforeLanguageSwitch = () => null;
 const onLanguageSwitched = () => null;
-const IS_UNIVERSAL_MODE = true;
+const IS_UNIVERSAL_MODE = false;
 const MODULE_NAME = 'nuxt-i18n';
 const LOCALE_CODE_KEY = 'code';
 const LOCALE_ISO_KEY = 'iso';
@@ -16129,16 +16129,9 @@ async function createApp(ssrContext, config = {}) {
   const router = await createRouter(ssrContext);
   const store = createStore(ssrContext); // Add this.$router into store actions/mutations
 
-  store.$router = router; // Fix SSR caveat https://github.com/nuxt/nuxt.js/issues/3757#issuecomment-414689141
-
-  const registerModule = store.registerModule;
-
-  store.registerModule = (path, rawModule, options) => registerModule.call(store, path, rawModule, Object.assign({
-    preserveState: false
-  }, options)); // Create Root instance
+  store.$router = router; // Create Root instance
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
-
 
   const app = {
     head: {

@@ -4,7 +4,7 @@
     "../server/index.spa.html",
     "../server/index.ssr.html",
     "LICENSES",
-    "app.30b6926.js",
+    "app.fabe73a.js",
     "commons/app.3bf1436.js",
     "fonts/slick.b7c9e1e.woff",
     "fonts/slick.ced611d.eot",
@@ -23,7 +23,7 @@
     "runtime.2b1d517.js",
     "commons/app.3bf1436.js",
     "vendors~app.3753916.js",
-    "app.30b6926.js"
+    "app.fabe73a.js"
   ],
   "async": [
     "index.6d092d1.js",
@@ -2771,7 +2771,7 @@
   },
   "assetsMapping": {
     "1a3ae26b": [
-      "app.30b6926.js"
+      "app.fabe73a.js"
     ],
     "085a35c4": [
       "commons/app.3bf1436.js"
