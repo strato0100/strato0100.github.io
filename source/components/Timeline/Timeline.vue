@@ -18,30 +18,15 @@
                     >{{ $t('profileLanding.timeline_experience') }}</h5>
                     <u-animate-container>
                       <ul>
-                        <li>
+                        <li v-for="(ex, idx) in work_experience" :key="idx">
                           <u-animate :offset="100" name="fadeInLeftShort" duration="0.3s">
                             <div>
-                              <h3 class="use-text-subtitle2 pb-2">Project Leader</h3>
-                              <p class="mb-2">Modul & Ngine projects</p>
-                              <p class="time">2017 - Present</p>
-                            </div>
-                          </u-animate>
-                        </li>
-                        <li>
-                          <u-animate :offset="100" name="fadeInLeftShort" duration="0.3s">
-                            <div>
-                              <h3 class="use-text-subtitle2 pb-2">Senior Developer</h3>
-                              <p class="mb-2">at Banco Promerica</p>
-                              <p class="time">2012 - 2019</p>
-                            </div>
-                          </u-animate>
-                        </li>
-                        <li>
-                          <u-animate :offset="100" name="fadeInLeftShort" duration="0.3s">
-                            <div>
-                              <h3 class="use-text-subtitle2 pb-2">IT Manager</h3>
-                              <p class="mb-2">at Maveco</p>
-                              <p class="time">2011 - 2012</p>
+                              <h3 class="use-text-subtitle2 pb-2">
+                                {{ ex.whom }}
+                                <small>| {{ ex.title }}</small>
+                              </h3>
+                              <p class="mb-2">{{ ex.description }}</p>
+                              <p class="time">{{ ex.time }}</p>
                             </div>
                           </u-animate>
                         </li>
@@ -55,64 +40,14 @@
                       class="title-timeline use-text-subtitle"
                     >{{ $t('profileLanding.timeline_skill') }}</h5>
                     <ul>
-                      <li>
+                      <li v-for="(skill, idx) in skills" :key="idx">
                         <div class="text-icon">
-                          <i class="ion-social-javascript" />
-                          <h5
-                            class="use-text-subtitle2"
-                          >JavaScript (Node, Express, React, Vue, jQuery)</h5>
+                          <i :class="skill.icon" />
+                          <h5 class="use-text-subtitle2">{{ skill.title }}</h5>
                         </div>
                         <v-progress-linear
                           :height="10"
-                          :value="play ? 90 : 0"
-                          color="none"
-                          class="progress"
-                        />
-                      </li>
-                      <li>
-                        <div class="text-icon">
-                          <i class="icon ion-code" />
-                          <h5 class="use-text-subtitle2">PHP</h5>
-                        </div>
-                        <v-progress-linear
-                          :height="10"
-                          :value="play ? 90 : 0"
-                          color="none"
-                          class="progress"
-                        />
-                      </li>
-                      <li>
-                        <div class="text-icon">
-                          <i class="ion-ios-world-outline" />
-                          <h5 class="use-text-subtitle2">SQL (Oracle, MySQL, SQLServer, PostgreSQL)</h5>
-                        </div>
-                        <v-progress-linear
-                          :height="10"
-                          :value="play ? 85 : 0"
-                          color="none"
-                          class="progress"
-                        />
-                      </li>
-                      <li>
-                        <div class="text-icon">
-                          <i class="ion-ios-camera-outline" />
-                          <h5 class="use-text-subtitle2">.NET (C#, VisualBasic)</h5>
-                        </div>
-                        <v-progress-linear
-                          :height="10"
-                          :value="play ? 90 : 0"
-                          color="none"
-                          class="progress"
-                        />
-                      </li>
-                      <li>
-                        <div class="text-icon">
-                          <i class="ion-ios-snowy" />
-                          <h5 class="use-text-subtitle2">Java</h5>
-                        </div>
-                        <v-progress-linear
-                          :height="10"
-                          :value="play ? 70 : 0"
+                          :value="play ? skill.percentage : 0"
                           color="none"
                           class="progress"
                         />
@@ -130,12 +65,12 @@
 </template>
 
 <style lang="scss" scoped>
-@import './timeline-style.scss';
+@import "./timeline-style.scss";
 </style>
 
 <script>
-import Hidden from '../Hidden'
-import brand from '~/static/text/brand'
+import Hidden from "../Hidden";
+import brand from "~/static/text/brand";
 
 export default {
   components: {
@@ -145,30 +80,100 @@ export default {
     return {
       loaded: false,
       brand: brand,
-      play: false
-    }
+      play: false,
+      work_experience: [
+        {
+          whom: "Modul & Ngine",
+          title: this.$t("custom.project_leader"),
+          description: this.$t("custom.modul_n_ngine_description"),
+          time: `2017 - ${this.$t("custom.present")}`
+        },
+        {
+          whom: this.$t("custom.promerica_bank"),
+          title: this.$t("custom.senior_developer"),
+          description: this.$t("custom.promerica_description"),
+          time: "2012 - 2019"
+        },
+        {
+          whom: "Impulsa-T",
+          title: this.$t("custom.software_provider"),
+          description: this.$t("custom.impulsat_description"),
+          time: `2017 - ${this.$t("custom.present")}`
+        },
+        {
+          whom: "Maveco",
+          title: this.$t("custom.it_manager"),
+          description: this.$t("custom.maveco_description"),
+          time: "2011 - 2012"
+        }
+      ],
+      skills: [
+        {
+          icon: "ion-social-nodejs",
+          title: "NodeJS, Express",
+          percentage: 90
+        },
+        {
+          icon: "ion-social-javascript",
+          title: "VueJS, jQuery",
+          percentage: 90
+        },
+        {
+          icon: "ion-social-javascript",
+          title: "React, ReactNative, VueNative",
+          percentage: 60
+        },
+        {
+          icon: "ion-code",
+          title: "PHP",
+          percentage: 85
+        },
+        {
+          icon: "ion-code",
+          title: "C#, Visual Basic (.NET)",
+          percentage: 90
+        },
+        {
+          icon: "ion-code",
+          title: "Java",
+          percentage: 75
+        },
+        {
+          icon: "ion-soup-can",
+          title: `${this.$t(
+            "custom.database_experience"
+          )} (SQL Server, Oracle, PostgreSQL)`,
+          percentage: 78
+        },
+        {
+          icon: "ion-soup-can",
+          title: "MySQL database",
+          percentage: 90
+        }
+      ]
+    };
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
   },
   methods: {
     handleScroll: function() {
-      const top = this.offsetTop - window.innerHeight + 400
+      const top = this.offsetTop - window.innerHeight + 400;
       if (window.scrollY > top) {
-        return (this.play = true)
+        return (this.play = true);
       }
-      return false
+      return false;
     }
   },
   computed: {
     offsetTop: function() {
-      const elm = document.getElementById('timeline')
-      return elm.getBoundingClientRect().y
+      const elm = document.getElementById("timeline");
+      return elm.getBoundingClientRect().y;
     },
     isDesktop() {
-      const mdUp = this.$store.state.breakpoints.mdUp
-      return mdUp.indexOf(this.$mq) > -1
+      const mdUp = this.$store.state.breakpoints.mdUp;
+      return mdUp.indexOf(this.$mq) > -1;
     }
   }
-}
+};
 </script>

@@ -59,16 +59,16 @@
 </template>
 
 <style lang="scss" scoped>
-@import './settings-style.scss';
+@import "./settings-style.scss";
 </style>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapGetters, mapState } from "vuex";
 
-let darkMode = false
-if (typeof Storage !== 'undefined') {
+let darkMode = false;
+if (typeof Storage !== "undefined") {
   // eslint-disable-line
-  darkMode = localStorage.getItem('luxiDarkMode') || false
+  darkMode = localStorage.getItem("luxiDarkMode") || false;
 }
 
 export default {
@@ -79,27 +79,27 @@ export default {
     }
   },
   data: () => ({
-    dark: darkMode === 'true',
+    dark: true,
     rtl: false,
     open: false,
     closeOnContentClick: false
   }),
   computed: {
-    ...mapState(['counter', 'darkMode']),
-    ...mapGetters(['getDir'])
+    ...mapState(["counter", "darkMode"]),
+    ...mapGetters(["getDir"])
   },
   methods: {
     switchLang: function(val) {
-      this.$i18n.setLocale(val)
+      this.$i18n.setLocale(val);
     },
     setDark: function() {
-      localStorage.setItem('luxiDarkMode', this.dark)
-      this.$vuetify.theme.dark = this.dark
+      localStorage.setItem("luxiDarkMode", this.dark);
+      this.$vuetify.theme.dark = this.dark;
     },
     setDirection: function() {
-      this.$vuetify.rtl = this.rtl
-      document.dir = this.rtl ? 'rtl' : 'ltr'
+      this.$vuetify.rtl = this.rtl;
+      document.dir = this.rtl ? "rtl" : "ltr";
     }
   }
-}
+};
 </script>

@@ -28,22 +28,22 @@
 </template>
 
 <style lang="scss" scoped>
-@import './sidenav-style.scss';
+@import "./sidenav-style.scss";
 </style>
 
 <script>
-import logo from '~/static/images/profile-logo.svg'
-import navMenu from '../SideNavigation/menu'
+import logo from "~/static/images/logos/modul.png";
+import navMenu from "../SideNavigation/menu";
 
-let counter = 0
+let counter = 0;
 function createData(name, url, offset) {
-  counter += 1
+  counter += 1;
   return {
     id: counter,
     name,
     url,
     offset
-  }
+  };
 }
 
 export default {
@@ -53,23 +53,23 @@ export default {
       loaded: false,
       navOffset: 20,
       menuList: [
-        createData(navMenu[0], '#' + navMenu[0]),
-        createData(navMenu[1], '#' + navMenu[1], -100),
-        createData(navMenu[2], '#' + navMenu[2]),
-        createData(navMenu[3], '#' + navMenu[3], -40),
-        createData(navMenu[4], '#' + navMenu[4]),
-        createData(navMenu[5], '#' + navMenu[5])
+        createData(navMenu[0], "#" + navMenu[0]),
+        createData(navMenu[1], "#" + navMenu[1], -100),
+        createData(navMenu[2], "#" + navMenu[2]),
+        createData(navMenu[3], "#" + navMenu[3], -40),
+        createData(navMenu[4], "#" + navMenu[4]),
+        createData(navMenu[5], "#" + navMenu[5])
         // createData(navMenu[6], '#' + navMenu[6])
       ]
-    }
+    };
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
   },
   methods: {
     setOffset: function(offset) {
-      this.navOffset = offset
+      this.navOffset = offset;
     }
   }
-}
+};
 </script>

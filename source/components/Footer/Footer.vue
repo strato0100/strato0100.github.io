@@ -9,13 +9,13 @@
             <h4 class="use-text-subtitle">{{ brand.profile.title }}</h4>
           </div>
           <div class="socmed">
-            <v-btn icon small class="margin">
+            <v-btn icon small class="margin" @click="go_to('fb')">
               <i class="ion-social-facebook" />
             </v-btn>
             <v-btn icon small class="margin">
-              <i class="ion-social-linkedin" />
+              <i class="ion-social-linkedin" @click="go_to('ln')" />
             </v-btn>
-            <v-btn icon small class="margin">
+            <v-btn icon small class="margin" @click="go_to('tw')">
               <i class="ion-social-twitter" />
             </v-btn>
             <!-- <v-btn icon small class="margin">
@@ -26,6 +26,8 @@
             <p class="use-text-paragraph">
               {{ $t('profileLanding.footer_contact') }}
               <br />+(502) 5218 3947
+              <br />
+              <a href="mailto:lrobledob@gmail.com">lrobledob@gmail.com</a>
             </p>
             <!-- <v-divider class="divider" />
             <p class="use-text-paragraph">
@@ -44,13 +46,13 @@
 </template>
 
 <style scoped lang="scss">
-@import './footer-style';
+@import "./footer-style";
 </style>
 
 <script>
-import logo from '~/static/images/profile-logo.svg'
-import brand from '~/static/text/brand'
-import ContactForm from '../Contact/Form'
+import logo from "~/static/images/profile-logo.svg";
+import brand from "~/static/text/brand";
+import ContactForm from "../Contact/Form";
 
 export default {
   components: {
@@ -62,9 +64,20 @@ export default {
   }),
   computed: {
     isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
+      const smDown = this.$store.state.breakpoints.smDown;
+      return smDown.indexOf(this.$mq) > -1;
+    }
+  },
+  methods: {
+    go_to(target) {
+      console.log(target);
+      if (target == "fb")
+        window.open("https://facebook.com/strato0100", "_blank");
+      else if (target == "tw")
+        window.open("https://twitter.com/strato0100", "_blank");
+      else if (target == "ln")
+        window.open("https://linkedin.com/strato0100", "_blank");
     }
   }
-}
+};
 </script>

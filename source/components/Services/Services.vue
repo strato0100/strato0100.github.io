@@ -35,18 +35,18 @@
 </template>
 
 <style lang="scss" scoped>
-@import './services-style.scss';
+@import "./services-style.scss";
 </style>
 
 <script>
-import Title from '../Title'
-import IconTextCard from '../Cards/IconText'
+import Title from "../Title";
+import IconTextCard from "../Cards/IconText";
 
 export default {
   components: {
-    'title-main': Title,
+    "title-main": Title,
     IconTextCard,
-    Slick: () => import('vue-slick')
+    Slick: () => import("vue-slick")
   },
   data() {
     return {
@@ -86,19 +86,34 @@ export default {
       },
       services: [
         {
-          icon: 'ion-ios-color-wand',
-          name: 'Frontend developer',
-          desc: 'Using VueJS, React.'
+          icon: "ion-social-javascript",
+          name: this.$t("custom.front_developer"),
+          desc: this.$t("custom.front_developer_desc")
         },
         {
-          icon: 'ion-social-dribbble-outline',
-          name: 'Backend developer',
-          desc: 'Pellentesque ac  vel blandit nulla.'
+          icon: "ion-code",
+          name: this.$t("custom.back_developer"),
+          desc: this.$t("custom.back_developer_desc")
         },
         {
-          icon: 'ion-ios-world-outline',
-          name: 'Databases',
-          desc: 'Wide experience'
+          icon: "ion-social-buffer",
+          name: this.$t("custom.design"),
+          desc: this.$t("custom.design_desc")
+        },
+        {
+          icon: "ion-ios-timer-outline",
+          name: this.$t("custom.optimization"),
+          desc: this.$t("custom.optimization_desc")
+        },
+        {
+          icon: "ion-soup-can",
+          name: this.$t("custom.sql"),
+          desc: this.$t("custom.sql_desc")
+        },
+        {
+          icon: "ion-paintbrush",
+          name: this.$t("custom.clean"),
+          desc: this.$t("custom.clean_desc")
         }
         // {
         //   icon: 'ion-ios-camera-outline',
@@ -111,30 +126,30 @@ export default {
         //   desc: 'Pellentesque ac  vel blandit nulla.'
         // }
       ]
-    }
+    };
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
     setTimeout(() => {
       if (this.$vuetify.rtl) {
-        const lastSlide = Math.floor(this.services.length - 3)
-        this.$refs.slick.goTo(lastSlide)
+        const lastSlide = Math.floor(this.services.length - 3);
+        this.$refs.slick.goTo(lastSlide);
       }
-    }, 200)
+    }, 200);
   },
   methods: {
     next: function() {
-      this.$refs.slick.next()
+      this.$refs.slick.next();
     },
     prev: function() {
-      this.$refs.slick.prev()
+      this.$refs.slick.prev();
     }
   },
   computed: {
     isDesktop() {
-      const mdUp = this.$store.state.breakpoints.mdUp
-      return mdUp.indexOf(this.$mq) > -1
+      const mdUp = this.$store.state.breakpoints.mdUp;
+      return mdUp.indexOf(this.$mq) > -1;
     }
   }
-}
+};
 </script>

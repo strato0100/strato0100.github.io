@@ -1,9 +1,9 @@
-import colors from 'vuetify/lib/util/colors'
+import colors from "vuetify/lib/util/colors";
 
-let darkMode = false
-if (typeof Storage !== 'undefined') {
+let darkMode = true;
+if (typeof Storage !== "undefined") {
   // eslint-disable-line
-  darkMode = localStorage.getItem('luxiDarkMode') || false
+  darkMode = localStorage.getItem("luxiDarkMode") || true;
 }
 
 const palette = {
@@ -16,16 +16,16 @@ const palette = {
     secondarydark: colors.amber.darken4, // secondary dark
     anchor: colors.green.base // link
   }
-}
+};
 
 export const theme = {
   ...palette.money
-}
+};
 
 export default {
   rtl: false,
   theme: {
-    dark: darkMode === 'true',
+    dark: true,
     themes: {
       light: {
         ...theme
@@ -38,4 +38,4 @@ export default {
       customProperties: true
     }
   }
-}
+};

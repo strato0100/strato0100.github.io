@@ -31,7 +31,7 @@
                     watchedElId: 'watched_counter',
                     startValue: 0,
                     endValue: 15,
-                    options: { duration: 2 }
+                    options: { duration: 1 }
                   }"
                 />+ years
               </h4>
@@ -63,7 +63,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import 'counter-style.scss';
+@import "counter-style.scss";
 </style>
 
 <script>
@@ -71,10 +71,10 @@ export default {
   data() {
     return {
       loaded: false
-    }
+    };
   },
   mounted() {
-    this.loaded = true
+    this.loaded = true;
   }
-}
+};
 </script>

@@ -6,26 +6,19 @@
         <v-col lg="9" cols="12" class="pa-0">
           <div class="about">
             <div class="reward">
-              <div class="item">
+              <div class="item" style="padding-left: 120px;">
                 <figure>
-                  <img src="/images/profile/reward1.svg" alt="badge" />
+                  <img src="/images/logos/modul.png" alt="badge" />
                 </figure>
-                <p class="use-text-paragraph">Special Mention</p>
-                <h5 class="use-text-subtitle">Awards</h5>
+                <p class="use-text-paragraph">{{ $t("custom.project_leader") }}</p>
+                <h5 class="use-text-subtitle">Modul</h5>
               </div>
-              <div class="item">
+              <div class="item" style="padding-right: 90px;">
                 <figure>
-                  <img src="/images/profile/reward2.svg" alt="badge" />
+                  <img src="/images/logos/ngine.png" alt="badge" />
                 </figure>
-                <p class="use-text-paragraph">100k videos</p>
-                <h5 class="use-text-subtitle">Subscriber</h5>
-              </div>
-              <div class="item">
-                <figure>
-                  <img src="/images/profile/reward3.svg" alt="badge" />
-                </figure>
-                <p class="use-text-paragraph">Best Filmography</p>
-                <h5 class="use-text-subtitle">Footage</h5>
+                <p class="use-text-paragraph">{{ $t("custom.project_leader") }}</p>
+                <h5 class="use-text-subtitle">Ngine</h5>
               </div>
             </div>
             <hidden point="mdUp">
@@ -45,10 +38,8 @@
               </div>
             </hidden>
             <hidden point="mdUp">
-              <h5>
-                {{ $t('profileLanding.banner_desc') }}
-              </h5>
-            </hidden>  
+              <h5>{{ $t('profileLanding.banner_desc') }}</h5>
+            </hidden>
             <v-card class="photo">
               <figure>
                 <img :src="brand.profile.avatar" alt="avatar" />
@@ -64,12 +55,12 @@
 </template>
 
 <style lang="scss" scoped>
-@import './about-style.scss';
+@import "./about-style.scss";
 </style>
 
 <script>
-import Hidden from '../Hidden'
-import brand from '~/static/text/brand'
+import Hidden from "../Hidden";
+import brand from "~/static/text/brand";
 
 export default {
   components: {
@@ -78,13 +69,13 @@ export default {
   data() {
     return {
       brand: brand
-    }
+    };
   },
   computed: {
     isMobile() {
-      const smDown = this.$store.state.breakpoints.smDown
-      return smDown.indexOf(this.$mq) > -1
+      const smDown = this.$store.state.breakpoints.smDown;
+      return smDown.indexOf(this.$mq) > -1;
     }
   }
-}
+};
 </script>
